@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {} from "../";
+// import {} from "../";
+import axios from 'axios';
+
 
 // import axios from "axios";
 
@@ -17,9 +19,9 @@ const RefForm = () => {
     email: "",
     student: "",
     message: "",
-    profile: "",
-    gallery: "",
-    language: [],
+    // profile: "",
+    // gallery: "",
+    // language: [],
     // hobbies: "",
     gender: [],
   });
@@ -30,9 +32,9 @@ const RefForm = () => {
     email,
     student,
     message,
-    profile,
-    gallery,
-    language,
+    // profile,
+    // gallery,
+    // language,
     // hobbies,
     gender,
   } = user;
@@ -78,22 +80,21 @@ const RefForm = () => {
     // e.preventDefault(); this is used for- page refresh na ho
     console.log(user);
     e.preventDefault();
-
-    // await axios.post("http://localhost:8000/commentForm", user).then((res) => {
-    //   console.log(res);
-    // });
-    setUser({
-      name: "",
-      email: "",
-      rollNumber: "",
-      student: "",
-      message: "",
-      profile: "",
-      gallery: "",
-      language: "",
-      hobbies: "",
-      gender: "",
+    await axios.post("http://localhost:8000/api/formroute", user).then((res) => {
+      console.log(res);
     });
+    // setUser({
+    //   name: "",
+    //   email: "",
+    //   rollNumber: "",
+    //   student: "",
+    //   message: "",
+    //   profile: "",
+    //   gallery: "",
+    //   language: "",
+    //   hobbies: "",
+    //   gender: "",
+    // });
     // user.name = "";
     // user.rollNumber = "";
     // user.email = "";
@@ -217,7 +218,7 @@ const RefForm = () => {
           type="file"
           id="formFile"
           name="profile"
-          value={profile}
+          // value={profile}
           onChange={(e) => {
             handleInputs(e);
           }}
@@ -225,7 +226,7 @@ const RefForm = () => {
       </div>
       <img
         className="col-sm-4"
-        src={profile}
+        // src={profile}
         alt="profile"
         style={{ width: "200px", height: "100px" }}
       />
@@ -239,7 +240,7 @@ const RefForm = () => {
           name="gallery"
           id="formFileMultiple"
           multiple
-          value={gallery}
+          // value={gallery}
           onChange={(e) => {
             handleInputs(e);
           }}
@@ -247,7 +248,7 @@ const RefForm = () => {
       </div>
       <img
         className="col-sm-4"
-        src={gallery}
+        // src={gallery}
         alt="gallery"
         style={{ width: "200px", height: "100px" }}
       />
@@ -318,7 +319,7 @@ const RefForm = () => {
             type="checkbox"
             className="form-check-input"
             name="allSelect"
-            value={language}
+            // value={language}
             id="gridCheck"
             // checked={
             //   users.filter((user) => user?.isChecked !== true).length < 1
@@ -475,7 +476,10 @@ const RefForm = () => {
         </div>
       </fieldset>
       <button
-        onClick={handleOnClick}
+        // onClick={handleOnClick}
+        onClick={(e) => {
+                  handleOnClick(e);
+                }}
         className="btn btn-outline-info rounded-pill my-2"
       >
         Submit

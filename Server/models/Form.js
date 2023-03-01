@@ -8,7 +8,7 @@ const FormSchema = new Schema({
   rollNumber: {
     type: String,
     required: true,
-    unique: true,
+    // unique: true,
   },
   email: {
     type: String,
@@ -22,21 +22,22 @@ const FormSchema = new Schema({
     type: String,
     required: true,
   },
-  profile: {
-    type: String,
-    // required: true,
-  },
-  gallery: {
-    type: String,
-    // required: true,
-  },
-  language: {
-    type: String,
-    required: true,
-  },
+  // profile: {
+  //   type: String,
+  //   // required: true,
+  // },
+  // gallery: {
+  //   type: String,
+  //   // required: true,
+  // },
+  // language: {
+  //   type: String,
+  //   required: true,
+  // },
   gender: {
     type: String,
     required: true,
   },
+  // buff:Buffer,
 });
 module.exports = mongoose.model("formdata", FormSchema);

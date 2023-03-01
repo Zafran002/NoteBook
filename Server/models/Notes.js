@@ -19,7 +19,7 @@ const NotesSchema = new Schema ({
         type:Date,
         default:Date.now
     },
-    
+    // buff:Buffer,
     
 });
 module.exports =mongoose.model('notes',NotesSchema);

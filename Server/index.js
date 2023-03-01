@@ -8,7 +8,7 @@ const port = 8000;
 app.use(express.json());
 // Available Routes
 app.use("/api/auth", require("./routes/auth"));
-app.use("/api/notes", require("./routes/notes"));
+// app.use("/api/notes", require("./routes/notes"));
 app.use("/api/formroute", require("./routes/formroute"));
 
 app.get("/", (req, res) => res.send("Hello Zafran"));
@@ -31,3 +31,10 @@ app.listen(port, () => {
 // });
 
 // module.exports = router;
+
+
+// git init.
+// git add .
+// git commit -m "Add all my files"
+// git pull origin master.
+// git push origin master.
