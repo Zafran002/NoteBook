@@ -22,10 +22,6 @@ module.exports = connectToMongo;
 
 
 
-
-
-
-
 // const mongoose = require("mongoose");
 
 // mongoose
